@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+    <title>Best Actor Contest</title>
+    <!-- Bootstrap -->
+    <script src={{url_for('static', filename='select/dist/css/bootstrap.min.css')}}  rel="stylesheet" ></script>
+  </head>
+  <body>
+    <div class="container" style="width: 700px">
+      <div id="currentPhase">
+      </div>
+      <div id="content">
+          <table class="table">
+            <thead>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Votes</th>
+            </thead>
+            <tbody id="contestantsResults">
+  
+            </tbody>
+            <hr/>
+            <p id="accountAddress" class="text-center"></p>
+          </table>
+  
+          <form action="" method="POST">
+            <div class="form-group">
+              <label for="contestantSelect">Select Contestant</label>
+              {{ form.voted(class_="form-control",placeholder="Select a Candidate")}}
+            </div>
+            <button type="submit" class="btn btn-primary">Cast your vote</button>
+          </form>
+
+          {% if error %}
+          <h2>You are not elligible to vote</h2>
+          {% endif %}
+      </div>
+
+  </div>
+  <p>{{users}}</p>
+      
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src={{url_for('static', filename='/css/vendor/global/global.min.js')}}></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src={{url_for('static', filename='/js/bootstrap.min.js')}}></script>
+    <script src={{url_for('static', filename='/js/web3.min.js')}}></script>
+    <script src={{url_for('static', filename='/js/truffle-contract.js')}}></script>
+    <script src={{url_for('static', filename='/js/app.js')}}></script>
+  </body>
+</html>
